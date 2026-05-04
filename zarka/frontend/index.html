@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zarka Fit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header class="hero">
+            <h1>Zarka Fit</h1>
+            <p>Frontend containerizado consumindo a API do backend via Docker Compose.</p>
+        </header>
+
+        <section class="card">
+            <h2>Configuração</h2>
+            <label for="usuarioId">Usuário</label>
+            <input id="usuarioId" type="number" value="1" min="1">
+            <p class="hint">O banco sobe com um usuário demo de ID 1 e produtos de exemplo.</p>
+        </section>
+
+        <section class="card">
+            <div class="section-header">
+                <h2>Produtos</h2>
+                <button id="recarregarProdutos">Recarregar</button>
+            </div>
+            <div id="produtos" class="grid"></div>
+        </section>
+
+        <section class="card">
+            <div class="section-header">
+                <h2>Carrinho</h2>
+                <div class="actions">
+                    <button id="listarCarrinho">Atualizar</button>
+                    <button id="limparCarrinho" class="danger">Limpar</button>
+                </div>
+            </div>
+            <div id="carrinho"></div>
+        </section>
+
+        <section class="card">
+            <div class="section-header">
+                <h2>Fechar Pedido</h2>
+            </div>
+            <label for="metodoPagamento">Método de Pagamento</label>
+            <input id="metodoPagamento" type="text" value="pix" placeholder="pix, cartao, boleto...">
+            <button id="fecharPedido">Fechar Pedido</button>
+        </section>
+
+        <section class="card">
+            <div class="section-header">
+                <h2>Pedidos</h2>
+                <button id="listarPedidos">Atualizar</button>
+            </div>
+            <div id="pedidos"></div>
+        </section>
+
+        <section class="card status-card">
+            <h2>Status</h2>
+            <pre id="status">Aplicação pronta.</pre>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
